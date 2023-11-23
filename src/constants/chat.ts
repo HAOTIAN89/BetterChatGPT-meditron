@@ -23,7 +23,12 @@ export const modelOptions: ModelOptions[] = [
   'gpt-3.5-turbo-1106',
   'gpt-4',
   'gpt-4-32k',
-  'gpt-4-1106-preview'
+  'gpt-4-1106-preview',
+  'meditron-7b',
+  'llama-2-7b',
+  'llama-2-70b',
+  'meditron-70b',
+  'meditron-70b-instruct'
   // 'gpt-3.5-turbo-0301',
   // 'gpt-4-0314',
   // 'gpt-4-32k-0314',
@@ -32,6 +37,11 @@ export const modelOptions: ModelOptions[] = [
 export const defaultModel = 'gpt-3.5-turbo';
 
 export const modelMaxToken = {
+  'meditron-7b': 4096,
+  'llama-2-7b': 4096,
+  'llama-2-70b': 4096,
+  'meditron-70b': 4096,
+  'meditron-70b-instruct': 4096,
   'gpt-3.5-turbo': 4096,
   'gpt-3.5-turbo-0301': 4096,
   'gpt-3.5-turbo-0613': 4096,
@@ -48,6 +58,14 @@ export const modelMaxToken = {
 };
 
 export const modelCost = {
+  'llama-2-70b': {
+    prompt: { price: 0.0015, unit: 1000 },
+    completion: { price: 0.002, unit: 1000 },
+  },
+  'meditron-70b': {
+    prompt: { price: 0.0015, unit: 1000 },
+    completion: { price: 0.002, unit: 1000 },
+  },
   'gpt-3.5-turbo': {
     prompt: { price: 0.0015, unit: 1000 },
     completion: { price: 0.002, unit: 1000 },
