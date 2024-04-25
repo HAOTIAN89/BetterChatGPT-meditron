@@ -171,3 +171,28 @@ First, update the API to be the one provided by FastChat's OpenAI API: `http://l
 Next, select the proper models to start interaction:
 
 <img width=50% src="./../figures/model.png" alt="select model" title="select model">
+
+### Lambda Labs UI
+
+Like the third section, first we need to get the modified BetterChatGPT.
+
+```bash
+git clone git@github.com:HAOTIAN89/BetterChatGPT-meditron.git
+cd BetterChatGPT
+```
+
+To start the UI, simply run:
+
+```bash
+npm install
+npm run dev
+```
+
+You can access the UI at `http://localhost:5173/`, and then you just need to set up three points to successfully run the model inference with the cluster:
+1. Change the model from default meditron-7b to meditron-70b, and set the Max Token to 4096.
+2. Delete the default System Prompt.
+3. Set the API Endpoint (your cluster) and API Key (EMPTY) in the API button.
+
+<img width=50% src="./../figures/lambda.png" alt="correct UI" title="correct UI">
+
+
