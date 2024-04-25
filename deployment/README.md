@@ -188,7 +188,7 @@ npm install
 npm run dev
 ```
 
-You can access the UI at `http://localhost:5173/`, and then you just need to set up three points to successfully connect to the cluster:
+You can access the UI at `http://localhost:5173/`, and then you just need to set up three points to successfully run the model inference with the cluster:
 1. Change the model from default meditron-7b to meditron-70b, and set the Max Token to 4096.
 2. Delete the default System Prompt.
 3. Set the API Endpoint (your cluster) and API Key (EMPTY) in the API button.
