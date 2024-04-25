@@ -193,6 +193,6 @@ You can access the UI at `http://localhost:5173/`, and then you just need to set
 2. Delete the default System Prompt.
 3. Set the API Endpoint (your cluster) and API Key (EMPTY) in the API button.
 
-<img width=50% src="./../figures/lambda.png" alt="correct UI" title="correct UI">
+<img width=70% src="./../figures/lambda.png" alt="correct UI" title="correct UI">
 
 
