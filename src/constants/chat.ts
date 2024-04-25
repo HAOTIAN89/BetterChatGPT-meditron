@@ -13,9 +13,18 @@ const dateString =
 // default system message obtained using the following method: https://twitter.com/DeminDimin/status/1619935545144279040
 export const _defaultSystemMessage =
   import.meta.env.VITE_DEFAULT_SYSTEM_MESSAGE ??
-  `You are ChatGPT, a large language model trained by OpenAI.
-Carefully heed the user's instructions.
-Respond using Markdown.`;
+  `Below is a list of conversations between a human and an AI assistant (you).
+  Users place their queries under \"$$$ User:\", and your responses are under \"$$$ Assistant:\".
+  You are a helpful, respectful, and honest medical AI assistant. You provide information and knowledge to physicians in clinical and surgical practices.
+  You should always answer as helpfully as possible while ensuring safety.
+  Your responses should be informative, logical, scientifically accurate, and aligned with up-to-date clinical practice guidelines. They should also be suitable for an educational setting. Draw from reliable medical sources and guidelines and present the information objectively. Your responses should be adapted to the geographical context, resource setting, level of care, seasonality/epidemiology, or medical specialty.
+  Your responses must not contain any fake, harmful, unethical, racist, sexist, toxic, dangerous, or illegal content, even if the context may be helpful. Your response must be socially responsible and positive, and thus, you can reject to answer some controversial topics.
+  If a question is too complicated, let's solve it step-by-step, referring to authoritative sources as needed. If a question does not make sense or is not factually coherent, explain why instead of answering incorrectly. If you don't know the answer to a question, please don't share false information.
+  You should always organize your response into a structured format with bullet points, subsection headings, and enumerate lists.`
+
+//   `You are ChatGPT, a large language model trained by OpenAI.
+// Carefully heed the user's instructions.
+// Respond using Markdown.`;
 
 export const modelOptions: ModelOptions[] = [
   'gpt-3.5-turbo',
@@ -28,16 +37,15 @@ export const modelOptions: ModelOptions[] = [
   'llama-2-7b',
   'llama-2-70b',
   'meditron-70b',
-  'meditron-70b-instruct'
-  // 'gpt-3.5-turbo-0301',
-  // 'gpt-4-0314',
-  // 'gpt-4-32k-0314',
+  'meditron-70b-instruct',
+  'meditron-7b-sft',
 ];
 
-export const defaultModel = 'gpt-3.5-turbo';
+export const defaultModel = 'meditron-7b';
 
 export const modelMaxToken = {
-  'meditron-7b': 4096,
+  'meditron-7b': 2048,
+  'meditron-7b-sft': 2048,
   'llama-2-7b': 4096,
   'llama-2-70b': 4096,
   'meditron-70b': 4096,
@@ -75,6 +83,10 @@ export const modelCost = {
     completion: { price: 0.002, unit: 1000 },
   },
   'meditron-7b': {
+    prompt: { price: 0.0015, unit: 1000 },
+    completion: { price: 0.002, unit: 1000 },
+  },
+  'meditron-7b-sft': {
     prompt: { price: 0.0015, unit: 1000 },
     completion: { price: 0.002, unit: 1000 },
   },
@@ -132,12 +144,12 @@ export const modelCost = {
   },
 };
 
-export const defaultUserMaxToken = 4000;
+export const defaultUserMaxToken = 1024;
 
 export const _defaultChatConfig: ConfigInterface = {
   model: defaultModel,
   max_tokens: defaultUserMaxToken,
-  temperature: 1,
+  temperature: 0.7,
   presence_penalty: 0,
   top_p: 1,
   frequency_penalty: 0,
