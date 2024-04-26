@@ -172,7 +172,7 @@ Next, select the proper models to start interaction:
 
 <img width=50% src="./../figures/model.png" alt="select model" title="select model">
 
-### Lambda Labs UI
+### Third Party UI for Lambda Labs
 
 Like the third section, first we need to get the modified BetterChatGPT.
 
