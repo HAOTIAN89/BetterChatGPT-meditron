@@ -172,7 +172,7 @@ Next, select the proper models to start interaction:
 
 <img width=50% src="./../figures/model.png" alt="select model" title="select model">
 
-### Lambda Labs UI
+### Third Party UI for Lambda Labs
 
 Like the third section, first we need to get the modified BetterChatGPT.
 
@@ -193,6 +193,6 @@ You can access the UI at `http://localhost:5173/`, and then you just need to set
 2. Delete the default System Prompt.
 3. Set the API Endpoint (your cluster) and API Key (EMPTY) in the API button.
 
-<img width=50% src="./../figures/lambda.png" alt="correct UI" title="correct UI">
+<img width=70% src="./../figures/lambda.png" alt="correct UI" title="correct UI">
 
 
