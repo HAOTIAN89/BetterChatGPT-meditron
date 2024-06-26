@@ -40,6 +40,8 @@ export const modelOptions: ModelOptions[] = [
   'meditron-70b-instruct',
   'meditron-7b-sft',
   'meditron2-70b-instruct',
+  'llama-2-70b-meditron',
+  'llama-3-70b-meditron',
 ];
 
 export const defaultModel = 'meditron-7b';
@@ -52,6 +54,8 @@ export const modelMaxToken = {
   'meditron-70b': 4096,
   'meditron-70b-instruct': 4096,
   'meditron2-70b-instruct': 4096,
+  'llama-2-70b-meditron': 4096,
+  'llama-3-70b-meditron': 4096,
   'gpt-3.5-turbo': 4096,
   'gpt-3.5-turbo-0301': 4096,
   'gpt-3.5-turbo-0613': 4096,
@@ -81,6 +85,14 @@ export const modelCost = {
     completion: { price: 0.002, unit: 1000 },
   },
   'meditron2-70b-instruct': {
+    prompt: { price: 0.0015, unit: 1000 },
+    completion: { price: 0.002, unit: 1000 },
+  },
+  'llama-2-70b-meditron': {
+    prompt: { price: 0.0015, unit: 1000 },
+    completion: { price: 0.002, unit: 1000 },
+  },
+  'llama-3-70b-meditron': {
     prompt: { price: 0.0015, unit: 1000 },
     completion: { price: 0.002, unit: 1000 },
   },
